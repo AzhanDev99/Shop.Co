@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+
+
+
+/* 
+html, body {
+  overflow-x: hidden;
+} */
+.lind{
+  font-family: "Antonio", sans-serif;
+  -webkit-text-stroke: 2px black;
+}

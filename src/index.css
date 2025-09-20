@@ -26,6 +26,7 @@ html, body {
 .fontfamily {
   font-family: "Antonio", sans-serif;
 }
+
 .lind {
   font-family: "Antonio", sans-serif;
   font-size: 60px;
@@ -67,5 +68,9 @@ html, body {
     left: 40px;
 }
 
-
+.center{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
 

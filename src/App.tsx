@@ -10,7 +10,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/Category' element={<Category />}></Route>
+          <Route path='/category' element={<Category />}></Route>
+          {/* <Route path='/category/:category' element={<Category />}></Route> */}
           {/* <Page1 /> */}
         </Routes>
       </BrowserRouter>

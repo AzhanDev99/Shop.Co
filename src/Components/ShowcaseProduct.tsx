@@ -13,7 +13,7 @@ type ShowcaseProductProps = {
 function ShowcaseProduct({
   ProductMainHeading,
   viewallbutton,
-  to,
+  // to,
   filtertype,
 }: ShowcaseProductProps) {
   let filteredproducts:any = [];

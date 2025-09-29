@@ -20,12 +20,6 @@
 
 // const CartContext = createContext<CartContextType | undefined>(undefined);
 
-
-
-
-
-
-
 // export const CartProvider = ({ children }: { children: ReactNode }) => {
 //   const [cart, setCart] = useState<Product[]>([]);
 
@@ -66,8 +60,6 @@
 //   if (!context) throw new Error("useCart must be used inside CartProvider");
 //   return context;
 // };
-
-
 
 // src/Context/CartContext.tsx
 import { createContext, useContext, useState, useEffect } from "react";
@@ -121,6 +113,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }
       return [...prev, { ...product, quantity: product.quantity || 1 }];
     });
+    setTimeout(() => {
+      alert("New product added to the cart!");
+    }, 0);
   };
 
   const removeFromCart = (id: number) => {
@@ -161,5 +156,3 @@ export const useCart = () => {
   if (!context) throw new Error("useCart must be used inside CartProvider");
   return context;
 };
-
-

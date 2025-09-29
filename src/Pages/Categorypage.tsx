@@ -15,8 +15,8 @@ type Productsizes =
 
 type CategorypageProps = {
   text?: string;
-  data :Product[];
-  filters :string[];
+  data: Product[];
+  filters: string[];
 };
 
 type Product = {
@@ -29,7 +29,7 @@ type Product = {
   type: string;
 };
 
-function Categorypage({ text ,data,filters }: CategorypageProps) {
+function Categorypage({ text, data, filters }: CategorypageProps) {
   const [filteretype, setFilteretype] = useState<Producttype | null>(null);
   const [filtersize, setFiltersize] = useState<Productsizes | null>(null);
 
@@ -44,33 +44,35 @@ function Categorypage({ text ,data,filters }: CategorypageProps) {
       <div>
         {/* straightline  */}
 
-        <div className='h-fit w-full center py-10'>
-          <h1 className='h-0.5 w-[80%] bg-black opacity-10'> </h1>
+        <div className="h-fit w-full center py-10">
+          <h1 className="h-0.5 w-[80%] bg-black opacity-10"> </h1>
         </div>
 
         {/* Home>casual seen on page*/}
 
-        <div className='pl-30'>
-          <span className='text-black/50'>Home</span> &gt; {text}
+        <div className="pl-30">
+          <span className="text-black/50">Home</span> &gt; {text}
         </div>
 
         {/* remaining  page */}
 
-        <div className='h-fit px-22 w-full flex gap-10 rounded-[20px]  '>
+        <div className="h-fit px-22 w-full flex gap-10 rounded-[20px]  ">
           {/* Left section  */}
           {/* projec tfilter section */}
 
-          <div className='h-[1220px] w-[295px] rounded-[20px] flex flex-col gap-[24px] px-[24px]'>
+          <div className="h-[1220px] w-[295px] rounded-[20px] flex flex-col gap-[24px] px-[24px]">
             <Productfiltersection
               setFilteretype={setFilteretype}
               setFiltersize={setFiltersize}
-              filters={filters}               
+              filters={filters}
+              filteretype={filteretype}
+              filtersize={filtersize}
             />
           </div>
 
           {/* Rightsection */}
 
-          <div className='h-[1220px] w-[825px] '>
+          <div className="h-fit w-[825px] ">
             <ProductShowcasingsection
               Productfilters={Productfilters}
               text={text}

@@ -24,18 +24,19 @@ function ProductShowcasingsection({
   return (
     <>
       <div>
-        <div className='h-[50px] w-full  flex justify-between items-center px-3 '>
-          <h1 className='text-[32px] font-bold'>{text}</h1>
+        <div className="h-[50px] w-full  flex justify-between items-center px-3 ">
+          <h1 className="text-[32px] font-bold">{text}</h1>
           <p>Total number of products {Productfilters.length}</p>
         </div>
 
-        <div className=' pt-3.5 items-center flex flex-wrap gap-5'>
+        <div className=" pt-3.5 items-center flex flex-wrap gap-5">
           {Productfilters.map((products) => (
             <Link
               key={products.id}
               to={`/Productdetails/${products.id}`}
               state={{ product: products }}
-              className='block'>
+              className="block"
+            >
               <ProductCard
                 key={products.id}
                 image={products.img}
@@ -47,8 +48,8 @@ function ProductShowcasingsection({
           ))}
         </div>
 
-        <div className='h-fit w-full center py-10'>
-          <h1 className='h-0.5 w-[80%] bg-black opacity-10 '> </h1>
+        <div className="h-fit w-full center py-10">
+          <h1 className="h-0.5 w-[80%] bg-black opacity-10 "> </h1>
         </div>
       </div>
     </>

@@ -3,13 +3,13 @@ import Categorypage from "./Categorypage";
 
 function Party (){
 
-    const formaldata = products.filter((p)=>p.category ==="party")
+    const Partydata = products.filter((p)=>p.category ==="party")
 return(
         <>
         <Categorypage
         text="Party" 
-        data={formaldata}
-        filters={["blazer", "suit", "coat"]}
+        data={Partydata}
+        filters={["jacket" , "traditional" , "shirt" , "jumpsuit"]}
         />
         </>
 )

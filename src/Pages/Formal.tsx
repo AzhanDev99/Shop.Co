@@ -7,7 +7,7 @@ function Formal (){
 return(
         <>
         <Categorypage
-        text="Forxxxmal" 
+        text="Formal" 
         data={formaldata}
         filters={["blazer", "suit", "coat"]}
         />

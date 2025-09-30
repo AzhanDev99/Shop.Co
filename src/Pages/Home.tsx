@@ -29,7 +29,7 @@ function Home() {
               of style.
             </p>
             <Link to={"ProdctPage"}>
-              <button className='px-[54px] animatebutton py-[16px] w-[210px] rounded-[62px] bg-black text-white hover:bg-green-400'>
+              <button className='px-[54px] animatebutton py-[16px] w-[210px] rounded-[62px] bg-black text-white hover:bg-gray-400 hover:text-black '>
                 <span className="animatebutton">Shop Now</span>
               </button>
             </Link>

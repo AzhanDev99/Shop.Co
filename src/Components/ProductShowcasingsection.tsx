@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
-import Ratings from "../assets/Projectimages/Frame 35.png";
+// import Ratings from "../assets/Projectimages/Frame 35.png";
 
 type Product = {
   id: number;
@@ -41,7 +41,7 @@ function ProductShowcasingsection({
                 key={products.id}
                 image={products.img}
                 producttitle={products.title}
-                ProductRatings={Ratings}
+                ProductRatings={products.rating}
                 ProductPrize={`$${products.price}`}
               />
             </Link>

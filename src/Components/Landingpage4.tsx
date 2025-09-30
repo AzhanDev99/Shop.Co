@@ -1,8 +1,8 @@
 import leftarrow from "../assets/Projectimages/arrow-down-bold 2.png";
 import rightarrow from "../assets/Projectimages/arrow-down-bold 1.png";
 import star from "../assets/Projectimages/Star 3.png";
-
 import LandingPage4ratingcard from "./LandingPage4ratingcard";
+import { products } from "../Data/Product";
 
 function LandingPage4() {
   return (
@@ -39,7 +39,7 @@ function LandingPage4() {
             <LandingPage4ratingcard
             image={star} 
             heading="James Bond"
-            paragraph="As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."
+            paragraph={"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."}
             />    
           </div>
           

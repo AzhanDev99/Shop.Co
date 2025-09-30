@@ -1,7 +1,9 @@
+import { Star } from "lucide-react";
+
 type ProductCardProps = {
   image?: string;
   producttitle?: string;
-  ProductRatings?: string;
+  ProductRatings: number;
   ProductPrize?: string;
 };
 
@@ -20,9 +22,11 @@ function ProductCard({
           alt=""
         />
         <h3 className="font-bold">{producttitle}</h3>
-        <p>
-          <img src={ProductRatings} alt="" />
+
+        <p className="flex">
+          {Array.from({length: ProductRatings}, (_ ,i) => (<Star key={i} size={18} className="text-yellow-500 fill-yellow-500" />))}
         </p>
+
         <h3 className="font-bold text-xl">{ProductPrize}</h3>
       </div>
     </>

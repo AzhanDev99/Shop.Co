@@ -3,13 +3,13 @@ import Categorypage from "./Categorypage";
 
 function Gym (){
 
-    const casualdata = products.filter((p)=>p.category ==="casual")
+    const gymdata = products.filter((p)=>p.category ==="gym")
 return(
         <>
         <Categorypage
-        text="Casual" 
-        data={casualdata}
-        filters={["T-shirt", "Hoodie", "Short-tshirt", "Oversize"]}
+        text="Gym Wear" 
+        data={gymdata}
+        filters={["tshirt" ,"hoodie" ,"shorts" ,"tanktop"]}
         />
         </>
 )

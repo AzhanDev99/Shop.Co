@@ -1,7 +1,6 @@
 // src/data/products.ts
 
 import casualpic from "../assets/Projectimages/faith-yarn-Wr0TpKqf26s-unsplash.jpg";
-// import Formalpic from "../assets/Projectimages/santhosh-kumar-RqYTuWkTdEs-unsplash.jpg";
 import Partypic from "../assets/Projectimages/robert-richman-vcTKFYNZop4-unsplash.jpg";
 import Gympic from "../assets/Projectimages/robert-richman-vcTKFYNZop4-unsplash.jpg";
 

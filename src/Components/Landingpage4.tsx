@@ -33,12 +33,12 @@ function LandingPage4() {
             />    
             <LandingPage4ratingcard
             image={star} 
-            heading="James Bond"
+            heading="Sara"
             paragraph="As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."
             />    
             <LandingPage4ratingcard
             image={star} 
-            heading="James Bond"
+            heading="David"
             paragraph={"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."}
             />    
           </div>

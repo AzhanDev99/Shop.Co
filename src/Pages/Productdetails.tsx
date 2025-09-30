@@ -1,5 +1,5 @@
 import { useLocation, useParams } from "react-router-dom";
-import ratingg from "../assets/Projectimages/Star 3.png";
+// import ratingg from "../assets/Projectimages/Star 3.png";
 import Sizebutton from "../Components/Sizebutton";
 import { products } from "../Data/Product";
 import { useCart } from "../Context/CartContext";

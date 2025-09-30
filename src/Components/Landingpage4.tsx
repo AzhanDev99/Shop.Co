@@ -2,7 +2,7 @@ import leftarrow from "../assets/Projectimages/arrow-down-bold 2.png";
 import rightarrow from "../assets/Projectimages/arrow-down-bold 1.png";
 import star from "../assets/Projectimages/Star 3.png";
 import LandingPage4ratingcard from "./LandingPage4ratingcard";
-import { products } from "../Data/Product";
+
 
 function LandingPage4() {
   return (

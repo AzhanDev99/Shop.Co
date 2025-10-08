@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
-// import Ratings from "../assets/Projectimages/Frame 35.png";
 
 type Product = {
   id: number;

@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link,useLocation  } from "react-router-dom";
 import Filtervector from "../assets/Projectimages/filtervector.png";
 import rightarrowvector from "../assets/Projectimages/rightarrowvector.png";
 import upperarrowvector from "../assets/Projectimages/upperarrowvector.png";
-
 import Casualffilter from "./Casualfilter";
 import Casualheading from "./Casualheading";
 import Sizebutton from "./Sizebutton";
@@ -33,6 +32,9 @@ function Productfiltersection({
   filtersize,
   filteretype,
 }: ProducfiltersectionProps) {
+
+  const location =useLocation();
+
   return (
     <>
       <div>
@@ -124,20 +126,10 @@ function Productfiltersection({
             />
           </div>
           <div className="flex flex-col gap-6 pt-5">
-            <Link to={"/Casual"}>
-              <Casualffilter text="Casual" img={rightarrowvector} />
-            </Link>
-            <Link to={"/Formal"}>
-              {" "}
-              <Casualffilter text="Formal" img={rightarrowvector} />
-            </Link>
-            <Link to={"/Party"}>
-              {" "}
-              <Casualffilter text="Party" img={rightarrowvector} />
-            </Link>
-            <Link to={"/Gym"}>
-              <Casualffilter text="Gym" img={rightarrowvector} />
-            </Link>
+            <Link to={"/Casual"}><Casualffilter text="Casual"  img={rightarrowvector} selected={location.pathname === "/Casual"} /></Link>
+            <Link to={"/Formal"}><Casualffilter text="Formal" img={rightarrowvector} selected={location.pathname === "/Formal"}/></Link>
+            <Link to={"/Party"}><Casualffilter text="Party" img={rightarrowvector} selected={location.pathname === "/Party"}/></Link>
+            <Link to={"/Gym"}><Casualffilter text="Gym" img={rightarrowvector} selected={location.pathname === "/Gym"}/></Link>
           </div>
         </div>
       </div>

@@ -12,9 +12,8 @@ type AddtoCartDesignProps = {
   onRemove?: () => void;
   quantitty?:string |number;
   id?:string |number;
+  cartid?:string;
 };
-
-
 
 function AddtoCartDesign({
   productimage,
@@ -32,7 +31,7 @@ const { addToCart } = useCart();
 
   return (
     <>
-      <div className='flex items-center justify-between p-5'>
+      <div className='md:flex items-center justify-between p-5'>
         <div className='flex gap-6 '>
           <img
             className='w-[124px] h-[124px] rounded-3xl'
@@ -46,14 +45,14 @@ const { addToCart } = useCart();
           </div>
         </div>
 
-        <div className='flex flex-col justify-between items-center gap-7'>
+        <div className='flex md:flex-col flex-row-reverse justify-between items-center gap-7 pt-5 md:pt-0'>
           <button onClick={onRemove}>
             <img src={deleteicon} alt='' />
           </button>
           <QuantityComponent
             quantity={quantitty}
-            Onincrement={()=>(addToCart({ id: Number(id), title:Producttitle!, price: Number(ProductPrice), img: productimage! ,quantity: 1}))}
-            Ondecrement={()=>(addToCart({id: Number(id), title:Producttitle! , price:Number(ProductPrice), img:productimage! ,quantity: -1}))}
+            Onincrement={()=>(addToCart({ id: Number(id), title:Producttitle!, price: Number(ProductPrice), img: productimage! ,quantity: 1,size:productsize ?? "default",}))}
+            Ondecrement={()=>(addToCart({id: Number(id), title:Producttitle! , price:Number(ProductPrice), img:productimage! ,quantity: -1,size:productsize ?? "default",}))}
           />
         </div>
       </div>

@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Ayesha Khan", "rating": 5, "review": "Bohat hi zabardast experience. Kapron ki quality top notch!" },
+  { "id": 2, "name": "Omar Farooq",  "rating": 4, "review": "Material soft hai aur fitting theek ayi." },
+  { "id": 3, "name": "Maria Ahmed",   "rating": 5, "review": "Customer service bohat cooperative thi. Highly recommended!" },
+  { "id": 4, "name": "Ali Raza",      "rating": 4, "review": "Product acha, packaging thodi weak thi." },
+  { "id": 5, "name": "Sara Malik",    "rating": 4, "review": "Design unique hai — color thoda different tha." },
+  { "id": 6, "name": "Usman Ahmed",   "rating": 3, "review": "Delivery thodi late thi lekin product sahi tha." }
+
+
+]

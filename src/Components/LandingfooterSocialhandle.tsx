@@ -1,19 +1,28 @@
-
+import type { ReactNode } from "react";
 
 type LandingfooterSocialhandleProps = {
-image?:string;
-bgcolor?:string;
-imageheight?:string;
-imagewidth?:string;
+  icon: ReactNode;
+  bgcolor?: string;
+  link?: string;
 };
 
-function LandingfooterSocialhandle({image , imageheight ,imagewidth, bgcolor}:LandingfooterSocialhandleProps) {
+function LandingfooterSocialhandle({
+  bgcolor,
+  link,
+  icon,
+}: LandingfooterSocialhandleProps) {
   return (
     <>
-      <p className='h-[34px] w-[34px] border-2 border-black/10  center rounded-[50px]' style={{backgroundColor:bgcolor}}>
-
-        <img className=' h-[15px] w-[18px]' style={{height:imageheight, width:imagewidth}} src={image} alt='' />
-      </p>
+      <a
+        href={link}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='h-[34px] w-[34px] center rounded-[50px] 
+        text-black hover:text-white hover:bg-black transition-colors duration-300'
+        style={{ backgroundColor: bgcolor }}>
+        <h1 className=" h-[22px] w-[22px] center ">{icon}</h1>
+        
+      </a>
     </>
   );
 }

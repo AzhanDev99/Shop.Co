@@ -9,11 +9,11 @@ function Sizebutton({ text, onClick, selected }: SizebuttonProps) {
     <>
       <button
         onClick={onClick}
-        className={`px-7 py-2 rounded-[20px] text-sm 
+        className={`px-7 py-2 rounded-[20px] text-sm  font-bold cursor-pointer transition duration-100
             ${
               selected
-                ? "bg-white text-black border border-black"
-                : "bg-black text-white"
+                ? "bg-black text-white "
+                : "bg-white text-black border-2 border-black/20"
             }          
             `}
       >

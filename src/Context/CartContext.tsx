@@ -1,8 +1,11 @@
-
 // src/Context/CartContext.tsx
 import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
+/**
+ * Product here is used as "cart item" type.
+ * We add cartid?: string so TypeScript knows about it.
+ */
 type Product = {
   id: number;
   title: string;
@@ -11,13 +14,15 @@ type Product = {
   size?: string;
   color?: string;
   quantity: number;
+  cartid?: string; // <- added
 };
 
 type CartContextType = {
   cart: Product[];
   addToCart: (product: Product) => void;
-  removeFromCart: (id: number) => void;
-  confirmOrder: () => void; // ✅ new function
+  // Accept either cartid (string) OR legacy id (number) + optional size
+  removeFromCart: (cartidOrId: string | number, size?: string) => void;
+  confirmOrder: () => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -25,42 +30,69 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Product[]>([]);
 
-  // 🔹 Cart ko localStorage me save/load karo
+  // load from localStorage
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
     if (savedCart.length > 0) setCart(savedCart);
   }, []);
 
+  // persist to localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (product: Product) => {
     setCart((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+      // create a stable cartid for variants
+      const cartid = `${product.id}-${product.size ?? "default"}${product.color ? `-${product.color}` : ""}`;
+
+      // try find by cartid (preferred)
+      const existing = prev.find((item) => item.cartid === cartid);
+
       if (existing) {
-        const newQuantity = existing.quantity + product.quantity;
+        const newQuantity = existing.quantity + (product.quantity || 1);
 
         if (newQuantity <= 0) {
-          return prev.filter((item) => item.id !== product.id);
+          // remove if quantity drops to 0 or less
+          return prev.filter((item) => item.cartid !== cartid);
         }
 
         return prev.map((item) =>
-          item.id === product.id ? { ...item, quantity: newQuantity } : item
+          item.cartid === cartid ? { ...item, quantity: newQuantity } : item
         );
       }
-      return [...prev, { ...product, quantity: product.quantity || 1 }];
+
+      // not found -> add new entry with cartid
+      return [
+        ...prev,
+        {
+          ...product,
+          cartid,
+          quantity: product.quantity ?? 1,
+        },
+      ];
     });
-    // setTimeout(() => {
-    //   alert("New product added to the cart!");
-    // }, 0);
   };
 
-  const removeFromCart = (id: number) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  // flexible remover: either by cartid (string) OR by (id, size)
+  const removeFromCart = (cartidOrId: string | number, size?: string) => {
+    setCart((prev) => {
+      if (typeof cartidOrId === "string") {
+        // remove exactly that cartid
+        return prev.filter((item) => item.cartid !== cartidOrId);
+      } else {
+        // number => legacy remove by id +/- size
+        return prev.filter(
+          (item) =>
+            !(
+              item.id === cartidOrId &&
+              (typeof size === "undefined" || item.size === size)
+            )
+        );
+      }
+    });
   };
 
-  // ✅ confirmOrder function
   const confirmOrder = () => {
     if (cart.length === 0) return;
 
@@ -75,7 +107,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const updatedOrders = [...existingOrders, newOrder];
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
 
-    // cart clear karo
     setCart([]);
     localStorage.removeItem("cart");
   };

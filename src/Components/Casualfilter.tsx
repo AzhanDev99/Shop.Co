@@ -14,7 +14,7 @@ function Casualffilter({ text, img, onClick, selected }: CasualffilterProps) {
           onClick={onClick}
         >
           <h1 className={`${selected && "underline font-bold"}`}>{text}</h1>
-          {img && <img className="h-[7px] w-[8px]" src={img} alt="" />}
+          {img && <img className="h-[10px] w-[10px]" src={img} alt="" />}
         </button>
       </div>
     </>

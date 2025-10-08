@@ -6,10 +6,6 @@ type QuantityComponentProps = {
     Ondecrement: ()=> void;
 
 };
-
-
-
-
 function QuantityComponent({
     quantity , Ondecrement ,Onincrement
 }:QuantityComponentProps) {

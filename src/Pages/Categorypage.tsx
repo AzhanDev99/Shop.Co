@@ -60,7 +60,7 @@ function Categorypage({ text, data, filters }: CategorypageProps) {
           {/* Left section  */}
           {/* projec tfilter section */}
 
-          <div className="h-[1220px] w-[295px] rounded-[20px] flex flex-col gap-[24px] px-[24px]">
+          <div className="h-[1220px] w-[295px] hidden md:flex rounded-[20px]  flex-col gap-[24px] px-[24px]">
             <Productfiltersection
               setFilteretype={setFilteretype}
               setFiltersize={setFiltersize}

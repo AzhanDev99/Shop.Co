@@ -15,7 +15,7 @@ function ProductCard({
 }: ProductCardProps) {
   return (
     <>
-      <div>
+      <div className="w-[250px] flex-shrink-0 opacity-75 hover:opacity-100 hover:scale-100 scale-95 transition-all ">
         <img
           className="h-[250px] w-[250px] rounded-[20px] object-cover"
           src={image}
@@ -24,7 +24,17 @@ function ProductCard({
         <h3 className="font-bold">{producttitle}</h3>
 
         <p className="flex">
-          {Array.from({length: ProductRatings}, (_ ,i) => (<Star key={i} size={18} className="text-yellow-500 fill-yellow-500" />))}
+          {Array.from({ length: 5 }, (_, i) => (
+                  <Star
+                    key={i}
+                    size={18}
+                    className={
+                      i < ProductRatings
+                        ? "text-yellow-500 fill-yellow-500"
+                        : "text-black fill-transparent"
+                    }
+                  />
+                ))}
         </p>
 
         <h3 className="font-bold text-xl">{ProductPrize}</h3>

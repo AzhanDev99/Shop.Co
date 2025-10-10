@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../src/Pages/Home";
+import { Toaster } from "react-hot-toast";
 import About from "../src/Pages/About";
 import Casual from "./Pages/Casual";
 import Formal from "./Pages/Formal";
@@ -29,6 +30,7 @@ function App() {
           <Route path='/cart' element={<Addtocart />}></Route>
         </Routes>
         <Footer />
+         <Toaster position='top-center' reverseOrder={false} />
       </BrowserRouter>
     </>
   );

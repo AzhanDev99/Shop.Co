@@ -23,12 +23,12 @@ function ProductShowcasingsection({
   return (
     <>
       <div>
-        <div className="h-[50px] w-full  flex justify-between items-center px-3 ">
+        <div className="h-[50px] w-full flex justify-between items-center px-3 ">
           <h1 className="text-[32px] font-bold">{text}</h1>
           <p>Total number of products {Productfilters.length}</p>
         </div>
 
-        <div className=" pt-3.5 items-center flex flex-wrap gap-5">
+        <div className="pt-3.5 items-center flex flex-wrap md:gap-5 justify-between">
           {Productfilters.map((products) => (
             <Link
               key={products.id}

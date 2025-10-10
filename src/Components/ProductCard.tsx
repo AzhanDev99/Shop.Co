@@ -15,13 +15,13 @@ function ProductCard({
 }: ProductCardProps) {
   return (
     <>
-      <div className="w-[250px] flex-shrink-0 opacity-75 hover:opacity-100 hover:scale-100 scale-95 transition-all ">
+      <div className="py-4 w-[190px] md:w-[250px] flex-shrink-0 opacity-75 hover:opacity-100 hover:scale-100 scale-95 transition-all flex flex-col items-center md:items-baseline">
         <img
-          className="h-[250px] w-[250px] rounded-[20px] object-cover"
+          className="md:h-[250px] h-[150px] md:w-[250px] w-[150px] rounded-[20px] object-cover"
           src={image}
           alt=""
         />
-        <h3 className="font-bold">{producttitle}</h3>
+        <h3 className="font-bold ">{producttitle}</h3>
 
         <p className="flex">
           {Array.from({ length: 5 }, (_, i) => (

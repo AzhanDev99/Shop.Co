@@ -20,8 +20,8 @@ function LandingPage3() {
               <Page3card image={img2} imagewidth='md:w-[650px] w-full' to={"/Formal"} />
             </div>
 
-            <div className='md:flex gap-[20px] pt-[15px] md:pt-[50px]'>
-              <Page3card image={img4} imagewidth='md:w-[650px] w-full' to={"/Party"} />
+            <div className='md:flex gap-[20px] pt-[15px] md:pt-[50px] '>
+              <Page3card image={img4} imagewidth='md:w-[650px] w-full ' to={"/Party"} />
               <Page3card image={img3} imagewidth='' to={"/Gym"} />
             </div>
           </div>

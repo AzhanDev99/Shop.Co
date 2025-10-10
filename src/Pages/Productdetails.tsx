@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import Sizebutton from "../Components/Sizebutton";
+import toast from "react-hot-toast";
 import { products } from "../Data/Product";
 import { useCart } from "../Context/CartContext";
 import QuantityComponent from "../Components/QuantityComponent";
@@ -137,7 +138,8 @@ function Productdetails() {
                     className='bg-black text-white px-15 border-2 border-black/60 md:px-32 py-2 rounded-3xl whitespace-nowrap active:bg-white active:text-black hover:text-black hover:bg-black/10  transition duration-100'
                     onClick={() => {
                       if (!selectedSize) {
-                        alert("Please select a size first!");
+                        // alert("Please select a size first!");
+                        toast.error("Kindly select the size first")
                         return;
                       }
 

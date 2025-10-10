@@ -72,13 +72,13 @@ function OrderForm({ onClose }: OrderFormProps) {
             <button
               type="button"
               onClick={onClose}
-              className="bg-black font-bold text-white px-4 py-2 rounded"
+              className="bg-black font-bold text-white px-4 py-2 rounded hover:bg-red-800 transition-all"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-white text-black font-bold border-2 border-black/10 px-4 py-2 rounded"
+              className="bg-white text-black font-bold border-2 border-black px-4 py-2 rounded hover:bg-black hover:text-white transition-all "
             >
               Submit Order
             </button>

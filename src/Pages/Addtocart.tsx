@@ -92,7 +92,7 @@ function Addtocart() {
               <div className='text-center'>
                 <button
                   onClick={() => setShowform(true)}
-                  className='text-2xl font-bold bg-black text-white px-9 py-3 rounded-xl'>
+                  className='text-2xl font-bold bg-black text-white px-9 py-3 rounded-xl hover:bg-black/20 hover:text-black border-2 border-black transition-all active:bg-black active:text-white'>
                   Confirm Order
                 </button>
                 {showform && (
